@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+/* ── Variables ── */
+:root {
+  --dark:        #0b2323;
+  --mid:         #17524f;
+  --accent:      #c8a84b;
+  --accent-pale: #f5edd8;
+  --bg:          #f2f4f0;
+  --surface:     #ffffff;
+  --text:        #1c2b1c;
+  --text-muted:  #546454;
+  --nav-w:       220px;
+  --r:           14px;
+  --sh:          0 4px 28px rgba(0,0,0,.09);
+  --sh-lg:       0 10px 48px rgba(0,0,0,.14);
+  --ease:        .22s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(140deg, var(--dark) 0%, #1e6060 70%, #287070 100%);
+  padding: 4.5rem 3rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: .05;
+  pointer-events: none;
+}
+.hero::before { width: 480px; height: 480px; top: -160px; right: -100px; }
+.hero::after  { width: 280px; height: 280px; bottom: -100px; left: 4%; }
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  position: relative;
+}
+
+.hero-bar {
+  width: 56px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 1.25rem auto;
+}
+
+.hero .subtitle {
+  font-size: .95rem;
+  font-weight: 300;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  position: relative;
+}
+
+/* ── Shell ── */
+.shell {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ── Sidebar nav ── */
+nav {
+  width: var(--nav-w);
+  flex-shrink: 0;
+  background: var(--dark);
+  min-height: calc(100vh - 1px);
+  padding: 2.5rem 0 3rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-label {
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.28);
+  padding: 0 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+nav a {
+  display: block;
+  padding: .72rem 1.5rem;
+  color: rgba(255,255,255,.68);
+  font-size: .88rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: color var(--ease), border-color var(--ease), background var(--ease);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: rgba(200,168,75,.08);
+}
+
+/* ── Main ── */
+main {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  min-width: 0;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border-radius: var(--r);
+  box-shadow: var(--sh);
+  padding: 2.75rem;
+  max-width: 860px;
+}
+
+.card h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.6rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.card a {
+  color: var(--mid);
+  font-weight: 500;
+  text-underline-offset: 3px;
+  transition: color var(--ease);
+}
+.card a:hover { color: var(--accent); }
+
+.card ul,
+.card ol {
+  margin: 0 0 1rem 1.5rem;
+}
+.card li { margin-bottom: .4rem; }
+
+/* ── Divider ── */
+.section-divider {
+  border: none;
+  border-top: 1px solid #e5eae5;
+  margin: 2.25rem 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hero { padding: 3rem 1.5rem 2.5rem; }
+
+  .shell { flex-direction: column; }
+
+  nav {
+    width: 100%;
+    height: auto;
+    position: static;
+    min-height: unset;
+    padding: 1rem 0 .5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-label { width: 100%; }
+
+  nav a {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    padding: .5rem .9rem;
+    font-size: .82rem;
+  }
+
+  nav a:hover,
+  nav a.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent);
+  }
+
+  main { padding: 1rem; }
+  .card { padding: 1.5rem; }
+}
