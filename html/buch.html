@@ -6,6 +6,10 @@
   <title>Meine Bücher – Olga Swerlowa</title>
   <link rel="stylesheet" href="../style.css">
   <style>
+    /* ── Widen card for book grid ── */
+    .card { max-width: none; }
+
+    /* ── Award banner ── */
     .award-banner {
       display: flex;
       align-items: center;
@@ -19,19 +23,36 @@
     .award-banner img { border-radius: 8px; display: block; height: auto; }
     .award-banner p { font-size: .95rem; color: var(--text); margin: 0; }
 
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-      gap: 1rem;
+    /* ── Section headings ── */
+    .book-section { margin-bottom: 2.5rem; }
+    .book-section h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 0 0 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--accent);
     }
 
+    /* ── Book grid ── */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* ── Book card ── */
     .book-card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 12px rgba(0,0,0,.12);
       background: var(--bg);
       transition: transform var(--ease), box-shadow var(--ease);
+      text-decoration: none;
+      color: inherit;
     }
     a.book-card:hover {
       transform: translateY(-4px);
@@ -42,6 +63,20 @@
       width: 100%;
       height: auto;
     }
+    .book-info {
+      padding: .6rem .75rem .8rem;
+      font-size: .76rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .book-title {
+      font-weight: 600;
+      font-size: .82rem;
+      color: var(--dark);
+      margin-bottom: .35rem;
+    }
+    .book-meta { color: var(--text-muted); }
+    .book-meta strong { color: var(--text); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -72,85 +107,1302 @@
 
         <div class="award-banner">
           <a href="https://www.belma-award.eu/index.php?id=77fa2149b0ae15d9767000154aaf4a41" target="_blank">
-            <img src="../images/BELMA19.jfif" alt="BELMA Award 2019" width="180">
+            <img src="../images/BELMA19.jfif" alt="BELMA Award 2019" width="160">
           </a>
           <p>Mein Lehrwerk <em><strong>Hallo Anna neu 1</strong></em> hat 2019 auf der Frankfurter Messe den <strong>BELMA-Award</strong> erhalten.</p>
         </div>
 
-        <div class="book-grid">
+        <!-- ═══════════════════════════════════════════════════════
+             HALLO ANNA NEU
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Hallo Anna neu (Klett)</h3>
+          <div class="book-grid">
 
-          <a class="book-card" href="http://www.amazon.de/Die-Deutschprofis-A1-Kursbuch-Online-H%C3%B6rmaterial/dp/3126764703/ref=sr_1_1?ie=UTF8&qid=1449442293&sr=8-1&keywords=Die%2BDeutschprofis" target="_blank">
-            <img src="../images/DDP KB.jpg" alt="Die Deutschprofis A1 Kursbuch">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrbuch-Audio-CDs/dp/3126000673/" target="_blank">
+              <img src="../images/HA3NLB.jpg" alt="Hallo Anna 3 neu Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3 neu: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000673<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.amazon.de/Perspektive-Deutsch-Kommunikation-Arbeitsplatz-%C3%9Cbungsbuch/dp/3126753485/ref=sr_1_25?ie=UTF8&qid=1449442233&sr=8-25&keywords=swerlowa" target="_blank">
-            <img src="../images/PD.jpg" alt="Perspektive Deutsch">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Arbeitsbuch-Bastelvorlagen/dp/3126000681/" target="_blank">
+              <img src="../images/HA3NAB.jpg" alt="Hallo Anna 3 neu Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3 neu: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000680<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Deutsch-Lehrbuch-Audio-CDs/dp/3126760600/ref=sr_1_1?ie=UTF8&qid=1449442043&sr=8-1&keywords=hallo%2Banna1" target="_blank">
-            <img src="../images/HA1K.jpg" alt="Hallo Anna">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrerhandbuch-Kopiervorlagen/dp/312600069X/" target="_blank">
+              <img src="../images/HA3NLHB.jpg" alt="Hallo Anna 3 neu Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3 neu: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000697<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="https://www.amazon.de/Aussichten-Paket-Fremdsprache-Erwachsene-Arbeitsbuch-Intensivtrainer/dp/3126762409/ref=sr_1_8?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=aussichten&qid=1594848634&s=books&sr=1-8" target="_blank">
-            <img src="../images/Aussichten_A1_1.jpg" alt="Aussichten A1">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrbuch-Audio-CDs/dp/3126000630/" target="_blank">
+              <img src="../images/HA2NLB.jpg" alt="Hallo Anna 2 neu Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2 neu: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000635<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.amazon.de/Grammatik-im-Gespr%C3%A4ch-Olga-Swerlowa/dp/3468494971/ref=sr_1_2?ie=UTF8&s=books&qid=1199038849&sr=1-2" target="_blank">
-            <img src="../images/gig2.jpg" alt="Grammatik im Gespräch">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Arbeitsbuch-Bastelvorlagen/dp/3126000649/" target="_blank">
+              <img src="../images/HA2NAB.jpg" alt="Hallo Anna 2 neu Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2 neu: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000642<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.swerlowa.de/Gramm.html" target="_blank">
-            <img src="../images/gk.jpg" alt="Grammatik &amp; Konversation">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrerhandbuch-Kopiervorlagen/dp/3126000657/" target="_blank">
+              <img src="../images/HA2NLHB.jpg" alt="Hallo Anna 2 neu Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2 neu: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000659<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.amazon.de/exec/obidos/redirect?link_code=as2&path=ASIN/3468494874&tag=dafhomepagvon-21&camp=1638&creative=6742" target="_blank">
-            <img src="../images/GK2.jpg" alt="Grammatik &amp; Konversation 2">
-          </a>
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrbuch-Audio-CD/dp/3126000711/" target="_blank">
+              <img src="../images/HANV-LB.jpg" alt="Hallo Anna Vorkurs Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna Vorkurs: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Jacek Betleja, Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000710<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
 
-          <div class="book-card">
-            <img src="../images/AD11.jpg" alt="Lehrwerk">
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Vorkurs-Arbeitsbuch/dp/312600072X/" target="_blank">
+              <img src="../images/HANV-AB.jpg" alt="Hallo Anna Vorkurs Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna Vorkurs: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Aleksandra Kubicka, Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000727<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Lehrbuch-Audio-CD/dp/3126000592/" target="_blank">
+              <img src="../images/HAN1-LB.jpg" alt="Hallo Anna 1 neu Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1 neu: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000598<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Deutsch-Arbeitsbuch/dp/3126000606/" target="_blank">
+              <img src="../images/HAN1-LHB.jpg" alt="Hallo Anna 1 neu Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1 neu: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000604<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Hallo-Anna-neu-Deutsch-Lehrerhandbuch/dp/3126000614/" target="_blank">
+              <img src="../images/HA1LHB.jpg" alt="Hallo Anna 1 neu Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1 neu: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126000611<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
           </div>
+        </div>
 
-          <div class="book-card">
-            <img src="../images/AD22.jpg" alt="Lehrwerk">
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             DIE DEUTSCHPROFIS
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Die Deutschprofis (Klett)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-B1-2-%C3%9Cbungsbuch-Audios/dp/3126764878/" target="_blank">
+              <img src="../images/DP-B1-2.jpg" alt="Die Deutschprofis B1.2">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis B1.2: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764872<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-B1-Kursbuch-Audios/dp/3126764908/" target="_blank">
+              <img src="../images/DDPB1.jpg" alt="Die Deutschprofis B1 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis B1: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764902<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-%C3%9Cbungsbuch-Olga-Swerlowa/dp/3126764916/" target="_blank">
+              <img src="../images/DP-B1UB.jpg" alt="Die Deutschprofis B1 Übungsbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis B1: Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764919<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-B1-1-%C3%9Cbungsbuch-Audios/dp/312676486X/" target="_blank">
+              <img src="../images/DP-B1-1.jpg" alt="Die Deutschprofis B1.1">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis B1.1: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764865<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-%C3%9Cbungsbuch-Olga-Swerlowa/dp/3126764819/" target="_blank">
+              <img src="../images/DDP2U.jpg" alt="Die Deutschprofis A2 Übungsbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A2: Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764810<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-A2-1-%C3%9Cbungsbuch-Audios/dp/3126765009/" target="_blank">
+              <img src="../images/DDPA2-1.jpg" alt="Die Deutschprofis A2.1">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A2.1: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126765008<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-A2-2-%C3%9Cbungsbuch-Audios/dp/3126765017/" target="_blank">
+              <img src="../images/DDPA2-2.jpg" alt="Die Deutschprofis A2.2">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A2.2: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126765015<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-A2-Kursbuch-Audios/dp/3126764800/" target="_blank">
+              <img src="../images/DDP2.jpg" alt="Die Deutschprofis A2 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A2: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764803<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-A1-1-%C3%9Cbungsbuch-Audios/dp/3126764762/" target="_blank">
+              <img src="../images/DDP1_1_.jpg" alt="Die Deutschprofis A1.1">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A1.1: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764766<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="https://www.amazon.de/Die-Deutschprofis-A1-2-%C3%9Cbungsbuch-Audios/dp/3126764770/" target="_blank">
+              <img src="../images/DDP1_2.jpg" alt="Die Deutschprofis A1.2">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A1.2: Kurs- und Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764773<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Die-Deutschprofis-A1-Kursbuch-Online-H%C3%B6rmaterial/dp/3126764703/" target="_blank">
+              <img src="../images/DDP KB.jpg" alt="Die Deutschprofis A1 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A1: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764704<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Die-Deutschprofis-A1-%C3%9Cbungsbuch/dp/3126764711/" target="_blank">
+              <img src="../images/DDP AB.jpg" alt="Die Deutschprofis A1 Übungsbuch">
+              <div class="book-info">
+                <div class="book-title">Die Deutschprofis A1: Übungsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126764711<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
           </div>
+        </div>
 
-          <div class="book-card">
-            <img src="../images/BD2.jpg" alt="Lehrwerk">
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             HALLO ANNA (Originalausgabe)
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Hallo Anna – Originalausgabe (Klett)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Deutsch-Lehrbuch-Audio-CDs/dp/3126760600/" target="_blank">
+              <img src="../images/HA1K.jpg" alt="Hallo Anna 1 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8376085111<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Arbeitsbuch-Deutsch-Kinder/dp/3126760619/" target="_blank">
+              <img src="../images/HA1AB.jpg" alt="Hallo Anna 1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8376085104<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Lehrerhandbuch-Bildkarten-Kopiervorlagen/dp/3126760627/" target="_blank">
+              <img src="../images/HA1LHB.jpg" alt="Hallo Anna 1 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 1: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Katarzyna Sroka<br>
+                  <strong>ISBN:</strong> 978-8377152379<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Deutsch-Lehrbuch-Audio-CDs/dp/3126760635/" target="_blank">
+              <img src="../images/Hallo Anna 2 LB.jpg" alt="Hallo Anna 2 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8377151174<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Deutsch-Kinder-Arbeitsbuch/dp/3126760643/" target="_blank">
+              <img src="../images/Hallo Anna 2 AB.jpg" alt="Hallo Anna 2 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8377151198<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Lehrerhandbuch-Bildkarten-Kopiervorlagen/dp/3126760651/" target="_blank">
+              <img src="../images/Hallo Anna 2 LHB.jpg" alt="Hallo Anna 2 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 2: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126760652<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Podrecznik-2CD-podstawowa/dp/8377155087/" target="_blank">
+              <img src="../images/Hallo Anna 3 LB.jpg" alt="Hallo Anna 3 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8377155080<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Deutsch-Kinder-Arbeitsbuch/dp/3126760678/" target="_blank">
+              <img src="../images/Hallo Anna 3 AB.jpg" alt="Hallo Anna 3 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-8377155073<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Hallo-Anna-Lehrerhandbuch-Bildkarten-Kopiervorlagen/dp/3126760686/" target="_blank">
+              <img src="../images/Hallo Anna 3 LHB.jpg" alt="Hallo Anna 3 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Hallo Anna 3: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126760683<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
           </div>
+        </div>
 
-          <div class="book-card">
-            <img src="../images/BP2.jpg" alt="Lehrwerk">
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             PERSPEKTIVE DEUTSCH
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Perspektive Deutsch (Klett)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.amazon.de/Perspektive-Deutsch-Kommunikation-Arbeitsplatz-%C3%9Cbungsbuch/dp/3126753485/" target="_blank">
+              <img src="../images/PD.jpg" alt="Perspektive Deutsch">
+              <div class="book-info">
+                <div class="book-title">Perspektive Deutsch: Kommunikation am Arbeitsplatz. Übungsbuch A2/B1+</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Lurdes Ros, Susanne Anane, Roberta Basiliko, Serife Sanli, Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3126753487<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
           </div>
+        </div>
 
-          <div class="book-card">
-            <img src="../images/BDK3.jpg" alt="Lehrwerk">
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             AUSSICHTEN
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Aussichten (Klett)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Kursbuch-mit-Audio-CDs-Fremdsprache/dp/312676200X/" target="_blank">
+              <img src="../images/Aussichten_A1_Kb.jpg" alt="Aussichten A1 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten A1: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676200-7<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Arbeitsbuch-mit-Audio-CD-DVD/dp/3126762018/" target="_blank">
+              <img src="../images/Aussichten_A1_Ab.jpg" alt="Aussichten A1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten A1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676201-4<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Teilband-A1-1-Arbeitsbuch-Fremdsprache/dp/3126762050/" target="_blank">
+              <img src="../images/Aussichten_A1_1.jpg" alt="Aussichten A1.1 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten A1.1: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676205-2<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Teilband-A1-2-Arbeitsbuch-Fremdsprache/dp/3126762069/" target="_blank">
+              <img src="../images/Aussichten_A1_2.jpg" alt="Aussichten A1.2 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten A1.2: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676206-9<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-A2-Kursbuch-mit-Audio-CDs/dp/3126762107/" target="_blank">
+              <img src="../images/Aussichten_A2_Kb.jpg" alt="Aussichten A2 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten A2: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676210-6<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Arbeitsbuch-mit-Audio-CD-DVD/dp/3126762115/" target="_blank">
+              <img src="../images/Aussichten_A2_Ab.jpg" alt="Aussichten A2 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten A2: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676211-3<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Teilband-A2-1-Arbeitsbuch-Fremdsprache/dp/3126762158/" target="_blank">
+              <img src="../images/Aussichten_A2_1_Tb.jpg" alt="Aussichten A2.1 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten A2.1: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676215-1<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Teilband-A2-2-Materialienbuch-Fremdsprache/dp/3126762166/" target="_blank">
+              <img src="../images/Aussichten_A2_2_Tb.jpg" alt="Aussichten A2.2 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten A2.2: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676216-8<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Kursbuch-mit-Audio-CDs-Fremdsprache/dp/3126762204/" target="_blank">
+              <img src="../images/Aussichten_B1_Kb.jpg" alt="Aussichten B1 Kursbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten B1: Kursbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676220-5<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-B1-Arbeits--Materialienbuch-Audio-CD/dp/3126762212/" target="_blank">
+              <img src="../images/Aussichten_B1_Ab.jpg" alt="Aussichten B1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Aussichten B1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3126762212<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Kursbuch-Arbeits--Materialienbuch-Audio-CDs/dp/3126762255/" target="_blank">
+              <img src="../images/AusB1_1.jpg" alt="Aussichten B1.1 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten B1.1: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3-12-676225-0<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.amazon.de/Aussichten-Kursbuch-Arbeits--Materialienbuch-Audio-CDs/dp/3126762263/" target="_blank">
+              <img src="../images/AusB1_1.jpg" alt="Aussichten B1.2 Teilband">
+              <div class="book-info">
+                <div class="book-title">Aussichten B1.2: Teilband</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> Olga Swerlowa, Lourdes M. Ros-El Hosni, Kerstin Reinke u. a.<br>
+                  <strong>ISBN:</strong> 978-3126762267<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </a>
+
           </div>
+        </div>
 
-          <div class="book-card">
-            <img src="../images/kompakt.jpg" alt="Lehrwerk">
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             GENI@L KLICK
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>geni@l klick (Klett)</h3>
+          <div class="book-grid">
+
+            <div class="book-card">
+              <img src="../images/GK10.jpg" alt="geni@l klick Kursbuch Band 1">
+              <div class="book-info">
+                <div class="book-title">geni@l klick: Kursbuch 10./11. Klasse, Band 1</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> E. Endt, M. Inderst, A. Padrós, P. Pfeifhofer, M. Schomer, Olga Swerlowa<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/GK11.jpg" alt="geni@l klick Kursbuch Band 2">
+              <div class="book-info">
+                <div class="book-title">geni@l klick: Kursbuch 10./11. Klasse, Band 2</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> E. Endt, K. Ransberger, M. Rodi, M. Schomer, Olga Swerlowa<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/GKAB10.jpg" alt="geni@l klick Arbeitsbuch Band 1">
+              <div class="book-info">
+                <div class="book-title">geni@l klick: Arbeitsbuch 10./11. Klasse, Band 1</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> E. Endt, M. Inderst, A. Padrós, P. Pfeifhofer, K. Ransberger, M. Rodi, M. Schomer, Olga Swerlowa<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/GKAB11.jpg" alt="geni@l klick Arbeitsbuch Band 2">
+              <div class="book-info">
+                <div class="book-title">geni@l klick: Arbeitsbuch 10./11. Klasse, Band 2</div>
+                <div class="book-meta">
+                  <strong>Autoren:</strong> E. Endt, M. Inderst, A. Padrós, P. Pfeifhofer, K. Ransberger, M. Rodi, M. Schomer, Olga Swerlowa<br>
+                  <strong>Verlag:</strong> Klett
+                </div>
+              </div>
+            </div>
+
           </div>
+        </div>
 
-          <a class="book-card" href="http://www.swerlowa.de/SWD.html" target="_blank">
-            <img src="../images/std.jpg" alt="Lehrwerk">
-          </a>
+        <hr class="section-divider">
 
-          <a class="book-card" href="http://www.swerlowa.de/SWD.html" target="_blank">
-            <img src="../images/SW2-2.jpg" alt="Lehrwerk">
-          </a>
+        <!-- ═══════════════════════════════════════════════════════
+             GRAMMATIK (Langenscheidt)
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Grammatik (Langenscheidt)</h3>
+          <div class="book-grid">
 
-          <a class="book-card" href="http://www.swerlowa.de/test.html" target="_blank">
-            <img src="../images/t1.jpg" alt="Lehrwerk">
-          </a>
+            <a class="book-card" href="http://www.amazon.de/exec/obidos/ASIN/3468494777/dafhomepagvon-21" target="_blank">
+              <img src="../images/gk.jpg" alt="Grammatik &amp; Konversation 1">
+              <div class="book-info">
+                <div class="book-title">Grammatik &amp; Konversation 1</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3-468-49477-2<br>
+                  <strong>Verlag:</strong> Langenscheidt
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.swerlowa.de/themenh.html" target="_blank">
-            <img src="../images/th8.jpg" alt="Lehrwerk">
-          </a>
+            <a class="book-card" href="http://www.amazon.de/Grammatik-Konversation-2-Olga-Swerlowa/dp/3468494874/" target="_blank">
+              <img src="../images/GK2.jpg" alt="Grammatik &amp; Konversation 2">
+              <div class="book-info">
+                <div class="book-title">Grammatik &amp; Konversation 2</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3-468-49487-1<br>
+                  <strong>Verlag:</strong> Langenscheidt
+                </div>
+              </div>
+            </a>
 
-          <a class="book-card" href="http://www.swerlowa.de/progr.html" target="_blank">
-            <img src="../images/Progr.jpg" alt="Lehrwerk">
-          </a>
+            <a class="book-card" href="http://www.amazon.de/Grammatik-im-Gespr%C3%A4ch-Olga-Swerlowa/dp/3468494971/" target="_blank">
+              <img src="../images/gig2.jpg" alt="Grammatik im Gespräch">
+              <div class="book-info">
+                <div class="book-title">Grammatik im Gespräch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-3468494970<br>
+                  <strong>Verlag:</strong> Langenscheidt
+                </div>
+              </div>
+            </a>
 
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             ABENTEUER DEUTSCH (AST-Press)
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Abenteuer Deutsch (AST-Press)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=614" target="_blank">
+              <img src="../images/ADLB1.jpg" alt="Abenteuer Deutsch 1 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 1: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-188-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=615" target="_blank">
+              <img src="../images/ADAB1.jpg" alt="Abenteuer Deutsch 1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-427-X<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=616" target="_blank">
+              <img src="../images/ADT1.jpg" alt="Abenteuer Deutsch 1 Tests">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 1: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-481-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=617" target="_blank">
+              <img src="../images/ADLHB1.jpg" alt="Abenteuer Deutsch 1 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 1: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-319-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=618" target="_blank">
+              <img src="../images/ADK1.jpg" alt="Abenteuer Deutsch 1 CD">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 1: CD A und B</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=625" target="_blank">
+              <img src="../images/ADLeB.jpg" alt="Abenteuer Deutsch Lesebuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch: Lesebuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-405-9<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <div class="book-card">
+              <img src="../images/ADLB2.jpg" alt="Abenteuer Deutsch 2 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 2: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-335-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=620" target="_blank">
+              <img src="../images/ADAH2.jpg" alt="Abenteuer Deutsch 2 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 2: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-482-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <div class="book-card">
+              <img src="../images/ADT2.jpg" alt="Abenteuer Deutsch 2 Tests">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 2: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94763-036-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=623" target="_blank">
+              <img src="../images/ADLHB2.jpg" alt="Abenteuer Deutsch 2 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Abenteuer Deutsch 2: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94763-040-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             BLICKPUNKT DEUTSCH (AST-Press)
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Blickpunkt Deutsch (AST-Press)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=626" target="_blank">
+              <img src="../images/BDLB1.jpg" alt="Blickpunkt Deutsch 1 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 1: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-271-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=627" target="_blank">
+              <img src="../images/BDAB1.jpg" alt="Blickpunkt Deutsch 1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-303-6<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=629" target="_blank">
+              <img src="../images/BDLHB1.jpg" alt="Blickpunkt Deutsch 1 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 1: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-316-8<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=628" target="_blank">
+              <img src="../images/BDT1.jpg" alt="Blickpunkt Deutsch 1 Tests">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 1: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-379-6<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=631" target="_blank">
+              <img src="../images/BDLB2.jpg" alt="Blickpunkt Deutsch 2 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 2: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94779-518-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=632" target="_blank">
+              <img src="../images/BDAB2.jpg" alt="Blickpunkt Deutsch 2 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 2: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-539-7<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=635" target="_blank">
+              <img src="../images/BDCD2.jpg" alt="Blickpunkt Deutsch 2 CD">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 2: CD</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=633" target="_blank">
+              <img src="../images/BDT2.jpg" alt="Blickpunkt Deutsch 2 Tests">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 2: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-541-0<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=634" target="_blank">
+              <img src="../images/BDLHB2.jpg" alt="Blickpunkt Deutsch 2 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 2: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=636" target="_blank">
+              <img src="../images/BDK3.jpg" alt="Blickpunkt Deutsch 3 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 3: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-717-9<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=637" target="_blank">
+              <img src="../images/BD3AB.jpg" alt="Blickpunkt Deutsch 3 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 3: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-739-1<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=638" target="_blank">
+              <img src="../images/bp3test.jpg" alt="Blickpunkt Deutsch 3 Tests">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 3: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-741-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=639" target="_blank">
+              <img src="../images/BD3LH.jpg" alt="Blickpunkt Deutsch 3 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 3: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 976-5-94776-762-9<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=640" target="_blank">
+              <img src="../images/BD3CD.jpg" alt="Blickpunkt Deutsch 3 CD">
+              <div class="book-info">
+                <div class="book-title">Blickpunkt Deutsch 3: CD</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             STICHWORT DEUTSCH (AST-Press)
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Stichwort Deutsch (AST-Press)</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=663" target="_blank">
+              <img src="../images/SDKLB.jpg" alt="Stichwort Deutsch kompakt Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch (kompakt): Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-533-5<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=664" target="_blank">
+              <img src="../images/SDKAB.jpg" alt="Stichwort Deutsch kompakt Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch (kompakt): Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-706-3<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=666" target="_blank">
+              <img src="../images/SDKZ.jpg" alt="Stichwort Deutsch kompakt Zusatzmaterialien">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch (kompakt): Zusatzmaterialien</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-401-6<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=667" target="_blank">
+              <img src="../images/SDKLHB.jpg" alt="Stichwort Deutsch kompakt Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch (kompakt): Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-415-6<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.astpress.ru//Pages/Book.aspx?id=668" target="_blank">
+              <img src="../images/SDKCD.jpg" alt="Stichwort Deutsch kompakt CD">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch (kompakt): CD</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 978-5-94776-791-9<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <div class="book-card">
+              <img src="../images/SDLB1.jpg" alt="Stichwort Deutsch 1 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 1: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-305-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDAB1.jpg" alt="Stichwort Deutsch 1 Arbeitsbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 1: Arbeitsbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-477-4<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDLHB1.jpg" alt="Stichwort Deutsch 1 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 1: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-89531-050-8<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDK1.jpg" alt="Stichwort Deutsch 1 Hörkassette">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 1: Hörkassette</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDLB2.jpg" alt="Stichwort Deutsch 2 Lehrbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Lehrbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-272-2<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDAB2a.jpg" alt="Stichwort Deutsch 2 Arbeitsbuch A">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Arbeitsbuch A</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94763-012-5<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDAB2b.jpg" alt="Stichwort Deutsch 2 Arbeitsbuch B">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Arbeitsbuch B</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94763-013-3<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDLHB2.jpg" alt="Stichwort Deutsch 2 Lehrerhandbuch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Lehrerhandbuch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-89531-090-7<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDT1-2.jpg" alt="Stichwort Deutsch 2 Tests">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Tests</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94776-290-0<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+            <div class="book-card">
+              <img src="../images/SDK2.jpg" alt="Stichwort Deutsch 2 Hörkassette">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2: Hörkassette</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════════════════════════════════════════
+             WEITERE BÜCHER
+        ═══════════════════════════════════════════════════════ -->
+        <div class="book-section">
+          <h3>Weitere Bücher</h3>
+          <div class="book-grid">
+
+            <a class="book-card" href="http://www.swerlowa.de/progr.html" target="_blank">
+              <img src="../images/Progr.jpg" alt="Das Curriculum">
+              <div class="book-info">
+                <div class="book-title">Das Curriculum (Lehrprogramm)</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-94763-010-9<br>
+                  <strong>Verlag:</strong> MART
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/test.html" target="_blank">
+              <img src="../images/t1.jpg" alt="Deutsch. 30 Tests 1">
+              <div class="book-info">
+                <div class="book-title">Deutsch. 30 Tests 1</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-89531-022-2<br>
+                  <strong>Verlag:</strong> MART
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/test.html" target="_blank">
+              <img src="../images/t2.jpg" alt="Deutsch. 30 Tests 2">
+              <div class="book-info">
+                <div class="book-title">Deutsch. 30 Tests 2</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-89531-064-8<br>
+                  <strong>Verlag:</strong> MART
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/test.html" target="_blank">
+              <img src="../images/t3.jpg" alt="Deutsch. 30 Tests 3">
+              <div class="book-info">
+                <div class="book-title">Deutsch. 30 Tests 3</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>ISBN:</strong> 5-89531-105-9<br>
+                  <strong>Verlag:</strong> MART
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/themenh.html" target="_blank">
+              <img src="../images/th8.jpg" alt="Themenhefte">
+              <div class="book-info">
+                <div class="book-title">Themenhefte</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> MART
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/SWD.html" target="_blank">
+              <img src="../images/std.jpg" alt="Stichwort Deutsch">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+            <a class="book-card" href="http://www.swerlowa.de/SWD.html" target="_blank">
+              <img src="../images/SW2-2.jpg" alt="Stichwort Deutsch 2">
+              <div class="book-info">
+                <div class="book-title">Stichwort Deutsch 2</div>
+                <div class="book-meta">
+                  <strong>Autor:</strong> Olga Swerlowa<br>
+                  <strong>Verlag:</strong> AST-Press
+                </div>
+              </div>
+            </a>
+
+          </div>
         </div>
 
       </div>
