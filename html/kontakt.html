@@ -66,7 +66,18 @@
 
         <div class="contact-block">
           <p>Bei Fragen, Anfragen oder Anregungen können Sie mich gerne kontaktieren:</p>
-          <a class="contact-email" href="mailto:swerlowa@hotmail.com">swerlowa@hotmail.com</a>
+          <span id="contact-email"></span>
+          <script>
+            (function() {
+              var u = 'swerlowa', d = 'hotmail.com';
+              var el = document.getElementById('contact-email');
+              var a = document.createElement('a');
+              a.href = 'mailto:' + u + '@' + d;
+              a.className = 'contact-email';
+              a.textContent = u + '@' + d;
+              el.appendChild(a);
+            })();
+          </script>
         </div>
 
         <div class="impressum">
