@@ -150,6 +150,98 @@
     @media (max-width: 500px) {
       .podcast-inner { flex-direction: column; }
     }
+
+    /* ── Neuigkeiten ── */
+    .news-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .75rem;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .news-card {
+      background: #fff;
+      border: 0.5px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+    }
+
+    .news-cover {
+      flex-shrink: 0;
+      width: 52px;
+      height: 70px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .news-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .news-cover-placeholder {
+      width: 52px;
+      height: 70px;
+      border-radius: 4px;
+      background: #d0e8d8;
+      flex-shrink: 0;
+    }
+
+    .news-body { flex: 1; min-width: 0; }
+
+    .news-badge {
+      display: inline-block;
+      background: #3a7d44;
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-bottom: .35rem;
+    }
+
+    .news-title {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: .2rem !important;
+      line-height: 1.3;
+    }
+
+    .news-authors {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-bottom: .5rem !important;
+    }
+
+    .news-link {
+      font-size: .78rem;
+      font-weight: 600;
+      color: #3a7d44 !important;
+      text-decoration: none;
+      text-underline-offset: 2px;
+    }
+
+    .news-link:hover { text-decoration: underline; color: #2d6235 !important; }
+
+    @media (max-width: 600px) {
+      .news-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -230,6 +322,34 @@
               </a>
             </div>
           </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <p class="news-label">Neuigkeiten</p>
+
+        <div class="news-grid">
+
+          <div class="news-card">
+            <div class="news-cover-placeholder" aria-hidden="true"></div>
+            <div class="news-body">
+              <span class="news-badge">Neu</span>
+              <p class="news-title">Die Deutschprofis neu</p>
+              <p class="news-authors">O. Swerlowa, B. Melchers</p>
+              <a class="news-link" href="https://www.klett-international.com/de/die-deutschprofis-neu/c-4964" target="_blank" rel="noopener noreferrer">Mehr Infos →</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-cover-placeholder" aria-hidden="true"></div>
+            <div class="news-body">
+              <span class="news-badge">Neu</span>
+              <p class="news-title">Hallo Anna aktuell</p>
+              <p class="news-authors">Olga Swerlowa</p>
+              <a class="news-link" href="https://www.calameo.com/klett/read/00061716668451e4674e2" target="_blank" rel="noopener noreferrer">Mehr Infos →</a>
+            </div>
+          </div>
+
         </div>
 
         <div class="award">
